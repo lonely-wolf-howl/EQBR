@@ -4,7 +4,9 @@
   "description": "",
   "main": "src/init.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src --out-dir dist --copy-files ",
+    "start": "node dist/init.js",
+    "dev": "nodemon --exec babel-node src/init.js"
   },
   "keywords": [],
   "author": "Jay",

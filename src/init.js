@@ -1,7 +1,6 @@
 import dotenv from 'dotenv';
 import Http from 'node:http';
 import { ExpressApp } from './app';
-import { serverCache } from './cache';
 
 dotenv.config();
 
@@ -15,8 +14,6 @@ export class Server {
 
   runServer = async () => {
     try {
-      await this.databaseConnection();
-      await serverCache.preCachingOptions();
       return this.serverListen();
     } catch (error) {
       return this.serverErrorHandler(error);
