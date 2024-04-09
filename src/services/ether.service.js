@@ -11,12 +11,6 @@ class EtherService {
     this.web3 = new Web3(url);
   }
 
-  sayHello = async () => {
-    return {
-      data: { result: 'Hello!' },
-    };
-  };
-
   showMeWeb3 = async () => {
     console.log(this.web3);
 

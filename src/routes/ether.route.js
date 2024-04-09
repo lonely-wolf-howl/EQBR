@@ -5,7 +5,6 @@ const router = Router();
 
 const etherController = new EtherController();
 
-router.get('/', etherController.sayHello);
 router.get('/web3', etherController.showMeWeb3);
 router.get('/web3/balance', etherController.getEthBalance);
 

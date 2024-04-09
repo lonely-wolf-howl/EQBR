@@ -4,26 +4,18 @@ import { sendResponse } from '../lib/api/response';
 class EtherController {
   _etherService = new EtherService();
 
-  sayHello = async (req, res) => {
-    const { data } = await this._etherService.sayHello(req, res);
-
-    sendResponse(res, { ...data }, 200);
-    /*
-      {
-        "data": {
-          "result": "Hello!"
-        },
-        "success": true
-      }
-    */
-  };
-
+  /*
+  /api/ether/web3
+  */
   showMeWeb3 = async (req, res) => {
     const { data } = await this._etherService.showMeWeb3(req, res);
 
     sendResponse(res, { ...data }, 200);
   };
 
+  /*
+  /api/ether/web3/balance
+  */
   getEthBalance = async (req, res) => {
     const { data } = await this._etherService.getEthBalance(req, res);
 
