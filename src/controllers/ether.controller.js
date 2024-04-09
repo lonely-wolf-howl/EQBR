@@ -7,15 +7,21 @@ class EtherController {
   sayHello = async (req, res) => {
     const { data } = await this._etherService.sayHello(req, res);
 
-    sendResponse(res, { ...data });
+    sendResponse(res, { ...data }, 200);
     /*
       {
         "data": {
-          "result": "Hello, World!"
+          "result": "Hello!"
         },
         "success": true
       }
     */
+  };
+
+  showMeWeb3 = async (req, res) => {
+    const { data } = await this._etherService.showMeWeb3(req, res);
+
+    sendResponse(res, { ...data }, 200);
   };
 }
 
