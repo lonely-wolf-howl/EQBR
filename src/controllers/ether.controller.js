@@ -23,6 +23,12 @@ class EtherController {
 
     sendResponse(res, { ...data }, 200);
   };
+
+  getEthBalance = async (req, res) => {
+    const { data } = await this._etherService.getEthBalance(req, res);
+
+    sendResponse(res, { ...data }, 200);
+  };
 }
 
 export default EtherController;

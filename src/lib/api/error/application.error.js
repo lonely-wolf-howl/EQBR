@@ -3,6 +3,7 @@ export class ApplicationError extends Error {
     INTERNAL: 'INTERNAL',
     NETWORK: 'NETWORK',
     UNKNOWN: 'UNKNOWN',
+    WEB3: 'WEB3',
   };
 
   constructor(options, overrides) {
