@@ -20,6 +20,9 @@ class EtherService {
     };
   };
 
+  /*
+  https://web3js.readthedocs.io/en/v1.10.0/web3-eth.html#getbalance
+  */
   getEthBalance = async (address) => {
     try {
       const balance = await this.web3.eth.getBalance(address);
@@ -36,11 +39,14 @@ class EtherService {
     }
   };
 
-  getRecentTransactions = async (address) => {
+  /*
+  https://docs.etherscan.io/api-endpoints/accounts#get-a-list-of-normal-transactions-by-address
+  */
+  getNormalTransactions = async (address) => {
     const { API_KEY: api_key } = process.env;
     try {
       const response = await axios.get(
-        `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&sort=desc&apikey=${api_key}&page=1&offset=10`,
+        `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&sort=desc&page=1&offset=10&apikey=${api_key}`,
       );
       const transactions = response.data.result;
 

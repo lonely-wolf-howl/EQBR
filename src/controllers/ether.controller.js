@@ -29,9 +29,9 @@ class EtherController {
   /*
   /api/ether/web3/transaction
   */
-  getRecentTransactions = async (req, res) => {
+  getNormalTransactions = async (req, res) => {
     const { WALLET_ADDRESS: address } = process.env;
-    const { data } = await this._etherService.getRecentTransactions(address);
+    const { data } = await this._etherService.getNormalTransactions(address);
 
     sendResponse(res, { ...data }, 200);
   };
